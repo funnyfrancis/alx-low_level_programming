@@ -7,16 +7,14 @@
 * Return: 0
 */
 
-void puts_half(char *str)
+void puts2(char *str)
 {
 	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-		;
-	i++;
-	for (i /= 2; str[i] != '\0'; i++)
+	while (*(str + i) != '\0')
 	{
-		_putchar(str[i]);
+		if (i % 2 == 0)
+			putchar(*(str + i));
+		i++;
 	}
-	_putchar('\n');
+	putchar(10);
 }
