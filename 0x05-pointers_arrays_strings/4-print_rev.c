@@ -8,7 +8,7 @@
  *Return: Nothing
  */
 
-void print_rev(char *s)
+void print_rev(char*s)
 {
 	int len = strlen (s);
 
@@ -16,4 +16,3 @@ void print_rev(char *s)
 		putchar(*(s + len));
 	putchar(10);
 }
-
