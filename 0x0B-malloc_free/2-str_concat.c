@@ -2,62 +2,34 @@
 /**
  * _strlen - count array
  * @s: array of elements
- * Return: 1
- */
-
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] != '\0' /*count character of string*/
-	{
-		i++;
-	}
-
-	Return (i);
-}
-
-/**
- * str_concat - back a pointer to array
- * @s1: array one
- * @s2: array two
- * Return: always an array dynamic
+ * Return 1
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *dst;
-	unsigned int i, j, size;
+	char *concat_str;
+	int index, concat_index = 0, len = 0;
 
-	/* if the array is empty*/
 	if (s1 == NULL)
 		s1 = "";
 
 	if (s2 == NULL)
 		s2 = "";
 
-	/* count size total*/
-	size = (_strlen(s1) + _strlen(s2) + 1);
+	for (index = 0; s1[index] || s2[index]; index++)
+		len++;
+	concat_str = malloc(sizeof(char) * len);
 
-	/*malloc*/
-	dst = (char *) malloc(size * sizeof(char));
-
-	if (dst == 0)
-	{
+	if (concat_str == NULL)
 		return (NULL);
-	}
 
-	/*concatenate arrays*/
-	for (i = 0; *(s1 + i) != '\0' i++
-		*(dst + i) = *(s1 + 1);
+	for (index = 0; s1[index]; index++)
+		concat_str[concat_index++] = s1[index];
 
-	for (j = 0; *(s2 + j) != '\0'; j++)
-	{
-		*(dst + i) = *(s2 + j);
-		i++;
-	}
+	for (index = 0; s2[index]; index++)
+		concat_str[concat_index++] = s2[index];
 
-	return (dst);
+	return (concat_str);
 }
+
 
